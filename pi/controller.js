@@ -1,4 +1,3 @@
-const joystick = new (require('joystick'))(0, 3500, 350);
 const bindings = {
   button: {
     0: { 1: "a:press", 0: "a:up" },
@@ -13,6 +12,17 @@ const bindings = {
   },
 };
 
+var joystick = {
+  on: () => { console.warn('No controller detected! This is bad!!!')}
+}
+
+try {
+  joystick = new (require('joystick'))(0, 3500, 350);
+}
+catch(err) {
+  console.error('No joystick has been found... This is bad!!!');
+}
+
 const eventMapper = function(event) {
   if (!event.init && bindings[event.type] && bindings[event.type][event.number] && bindings[event.type][event.number][event.value]) {
     return bindings[event.type][event.number][event.value];
@@ -25,7 +35,6 @@ module.exports = {
   bindCallback: (cb) => {
     joystick.on('button', (event) => {
       const foundEvent = eventMapper(event);
-
       if(foundEvent) {
         cb(foundEvent);
       }
