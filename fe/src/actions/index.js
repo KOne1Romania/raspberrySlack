@@ -5,9 +5,9 @@
 import * as api from 'api';
 import {Order} from 'constants';
 
-export function orderCoffee() {
+export function orderCoffee(order) {
   return {
     type: [Order.ORDER, Order.ORDER_SUCCESS, Order.ORDER_FAIL],
-    payload: api.orderCoffee()
+    payload: api.orderCoffee(order)
   }
 }
