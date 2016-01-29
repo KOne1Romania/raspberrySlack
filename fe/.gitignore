@@ -1,0 +1,8 @@
+.DS_Store
+node_modules
+npm-debug.log
+mylocal.config.js
+build
+coverage
+tests/results
+.idea
