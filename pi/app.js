@@ -3,7 +3,7 @@ const fetch = require('isomorphic-fetch');
 
 const getProduct = function(user, product, location) {
 
-  console.log('comandam:', user, product, location);
+  console.log('Trimitem comanda la:', process.env.URL, ' cu user / produs / location: ' user, product, location);
 
   fetch(process.env.URL, {
     method: 'post',
@@ -12,7 +12,8 @@ const getProduct = function(user, product, location) {
 		  'Content-Type': 'application/json'
     }),
     body: JSON.stringify({
-      user: user,
+      fromUser: user,
+      toUser: user,
       product: product,
       location: location,
     }),

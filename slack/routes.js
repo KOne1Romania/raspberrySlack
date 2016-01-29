@@ -19,7 +19,7 @@ module.exports = function (app) {
         res.json({ok: true})
         fetch('http://81.196.110.34:4243/hubot/notify/order_coffee', {
             method: 'POST',
-            body: JSON.stringify(dummy),
+            body: JSON.stringify(req.body),
             mode: 'cors',
             headers: new Headers({
                 'Content-Type': 'application/json'
