@@ -25,8 +25,22 @@ app.use(function (err, req, res, next) {
 
 app.post('/hello', slackBot);
 
-fetch('http://81.196.110.34:4243/hubot/notify/order_coffee').then((response) => {
-    console.log("response ", response);
+var dummy = {
+    fromUser: "matei.misarca",
+    product: "cafea",
+    toUser: "radu.parachiv",
+    location: "AICI"
+}
+
+fetch('http://localhost:8080/hubot/notify/order_coffee', {
+    method: 'POST',
+    body: JSON.stringify(dummy),
+    mode: 'cors',
+    headers: new Headers({
+        'Content-Type': 'application/json'
+    })
+}).then((response) => {
+    console.log("response ", response.status);
 });
 
 app.listen(port, function () {
