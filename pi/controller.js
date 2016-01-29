@@ -14,8 +14,8 @@ const bindings = {
 };
 
 const eventMapper = function(event) {
-  if (!event.init && button[event.type] && button[event.type][event.number] && button[event.type][event.number][event.value]) {
-    return button[event.type][event.number][event.value];
+  if (!event.init && bindings[event.type] && bindings[event.type][event.number] && bindings[event.type][event.number][event.value]) {
+    return bindings[event.type][event.number][event.value];
   }
 
   return false;
