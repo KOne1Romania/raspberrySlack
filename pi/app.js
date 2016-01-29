@@ -1,4 +1,4 @@
-const controller = require('controller');
+const controller = require('./controller');
 const fetch = require('isomorphic-fetch');
 
 controller.bindCallback((action) => {
