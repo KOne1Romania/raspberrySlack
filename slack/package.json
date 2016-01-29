@@ -1,0 +1,16 @@
+{
+  "name": "slack",
+  "version": "0.0.0",
+  "description": "A script that listen to a webport and send messages to slackbot",
+  "main": "slack.js",
+  "scripts": {
+    "start": "nodemon slack.js"
+  },
+  "author": "Matei Misarca <matei.misarca@kalon.ro>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.4",
+    "isomorphic-fetch": "^2.2.1"
+  }
+}
