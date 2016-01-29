@@ -1,0 +1,29 @@
+{
+  "name": "pi-controler",
+  "version": "0.0.1",
+  "description": "An XBOX controller wrapper used to order coffee on slack",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kalon/raspberrySlack.git"
+  },
+  "keywords": [
+    "pi",
+    "controller"
+  ],
+  "author": "XPilot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kalon/raspberrySlack/issues"
+  },
+  "homepage": "https://github.com/Kalon/raspberrySlack#readme",
+  "devDependencies": {
+    "joystick": "^0.1.2"
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1"
+  }
+}
