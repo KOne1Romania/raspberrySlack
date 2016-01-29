@@ -43,24 +43,6 @@ app.use(function (err, req, res, next) {
 
 app.post('/hello', slackBot);
 
-var dummy = {
-    fromUser: "matei.misarca",
-    product: "cafea",
-    toUser: "radu.parachiv",
-    location: "AICI"
-}
-
-fetch('http://localhost:8080/hubot/notify/order_coffee', {
-    method: 'POST',
-    body: JSON.stringify(dummy),
-    mode: 'cors',
-    headers: new Headers({
-        'Content-Type': 'application/json'
-    })
-}).then((response) => {
-    console.log("response ", response.status);
-});
-
 routes(app);
 
 var server = http.createServer(app);
